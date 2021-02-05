@@ -1,0 +1,12 @@
+.succes-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  span {
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: 700;
+    color: #5cd1a5;
+  }
+}
