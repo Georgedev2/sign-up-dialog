@@ -95,7 +95,12 @@ function SignUpDialog() {
             <div className="form-box submit-m">
               <button
                 className={`submit-btn ${
-                  lastName && firstName && email && "isActive"
+                  lastName &&
+                  firstName &&
+                  email &&
+                  /*  formValues.password && */
+                  formValues.password.length > 8 &&
+                  "isActive"
                 }`}
               >
                 Sign Up

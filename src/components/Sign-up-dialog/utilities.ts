@@ -6,6 +6,7 @@ export const getpasswordScore = (UserPassword: string) => {
   let score: string;
   let bars: number[] = [];
   let res = zxcvbn(UserPassword);
+  //console.log(res)
   if (UserPassword === "") {
     score = "";
   } else if (UserPassword.length < 8) {
