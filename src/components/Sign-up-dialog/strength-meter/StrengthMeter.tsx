@@ -1,6 +1,6 @@
-import "./strength-meter.scss";
-import { getpasswordScore } from "../utilities";
-import BarList from "./BarList";
+import './strength-meter.scss';
+import { getPasswordScore } from '../utilities';
+import { useMemo } from 'react';
 
 interface strengthMeterProps {
   formValues: {
@@ -13,27 +13,28 @@ interface strengthMeterProps {
 
 function StrengthMeter(props: strengthMeterProps) {
   const { password } = props.formValues;
+
+  let passwordResult = useMemo(() => {
+    return getPasswordScore(password);
+  }, [password]);
+
   return (
-    <div className="strength-meter">
-      <div className={`bars ${password.length && "show"}`}>
-        <BarList bars={[1, 2, 3, 4]} />
-        <div style={{ display: "flex", position: "absolute" }}>
-          {" "}
-          {getpasswordScore(password).bars.map((bar) => (
-            <div
-              key={bar}
-              className={`bar ${getpasswordScore(password).score}`}
-            ></div>
+    <div className={`passw-strength ${password.length && 'show'}`}>
+      <div>
+        <div className={`password-strength_bars`}>
+          {passwordResult.bars.map((bar) => (
+            <div key={bar} className={`bar ${passwordResult.score}`}></div>
           ))}
         </div>
       </div>
-      <div className="password-score">
-        <span>{getpasswordScore(password).score}</span>
+
+      {/* Password Score */}
+      <div className='password-strength_score'>
+        <span>{passwordResult.score}</span>
       </div>
     </div>
   );
 }
-// <BarList  bars={getpasswordScore(formValues).bars} />
 
 export default StrengthMeter;
 //sign-up-dialog-typscript

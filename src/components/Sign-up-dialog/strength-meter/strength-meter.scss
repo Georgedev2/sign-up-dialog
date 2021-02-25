@@ -1,48 +1,44 @@
-.strength-meter {
-  .bars {
-    display: flex;
-    visibility: hidden;
-    position: relative;
-    .bar {
-      height: 4px;
-      width: 56px;
-      border-radius: 4px;
-      margin: 4.2px;
-    } 
-    .s{
-      background-color: #eee;
-      height: 4px;
-      width: 56px;
-      border-radius: 4px;
-      margin: 4.2px;
-    }
-    
-    //Color of the strength bar when the password is weak
-    .weak {
-      background: #f28c8c;
-    }
+.passw-strength {
+  visibility: hidden;
 
-    .okey {
-      background: #ffcb7d;
-    }
-    .good {
-      background-color: #5cd1a5;
-    }
-    .strong {
-      background-color: #5cd1a5;
-    }
+  .password-strength_bars {
+    display: flex;
   }
-  .show {
-    visibility: visible;
+  .bar {
+    height: 4px;
+    width: 56px;
+    border-radius: 4px;
+    margin: 4.2px;
   }
-  .password-score {
+
+  //Color of the strength bar when the password is WEAK
+  .weak {
+    background: #f28c8c;
+  }
+  //Color of the strength bar when the password is OKEY
+  .okey {
+    background: #ffcb7d;
+  }
+  //Color of the strength bar when the password is GOOD
+  .good {
+    background-color: #5cd1a5;
+  }
+  //Color of the strength bar when the password is STRONG
+  .strong {
+    background-color: #5cd1a5;
+  }
+
+  .password-strength_score {
     font-family: Helvetica;
     width: 252px;
     text-align: right;
-    //margin: 0 0 0 112px;
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
     color: #8a9096;
   }
+}
+
+.show {
+  visibility: visible;
 }

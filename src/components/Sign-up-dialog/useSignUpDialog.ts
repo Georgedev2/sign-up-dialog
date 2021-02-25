@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { validateFormData } from "./utilities";
+import { useState } from 'react';
+import { validateFormData } from './utilities';
 
 function useSignUpDialog() {
   const initFormValues = {
-    lastName: "",
-    firstName: "",
-    email: "",
-    password: "",
+    lastName: '',
+    firstName: '',
+    email: '',
+    password: '',
   };
 
   // STATES
   const [formValues, setFormValues] = useState(initFormValues);
-  const [emailError, setEmailError] = useState("");
+  const [emailError, setEmailError] = useState('');
   const [isSucces, setIsSucces] = useState(false);
 
   //HANDLES CHANGE IN FORM FIELD VALUES
@@ -23,7 +23,7 @@ function useSignUpDialog() {
   function handleSubmit(e: any) {
     e.preventDefault();
 
-    const isValid: string = validateFormData(formValues.email) || "";
+    const isValid: string = validateFormData(formValues.email) || '';
     setEmailError(isValid);
     if (!isValid) {
       displaySuccessPage();

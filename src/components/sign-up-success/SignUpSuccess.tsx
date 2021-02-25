@@ -1,8 +1,8 @@
-import "./sign-up-success.scss";
+import './sign-up-success.scss';
 
 function SignUpSuccess() {
   return (
-    <div className="succes-page">
+    <div className='succes-page'>
       <span>Sign up successful</span>
     </div>
   );

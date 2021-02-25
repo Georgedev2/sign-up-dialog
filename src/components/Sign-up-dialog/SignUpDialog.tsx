@@ -1,8 +1,8 @@
-import "./sign-up-dialog.scss";
-import StrengthMeter from "./strength-meter/StrengthMeter";
-import useSignUpDialog from "./useSignUpDialog";
-import googleIcon from "../assets/google-icon.png";
-import SignUpSuccess from "../sign-up-success/SignUpSuccess";
+import './sign-up-dialog.scss';
+import StrengthMeter from './strength-meter/StrengthMeter';
+import useSignUpDialog from './useSignUpDialog';
+import googleIcon from '../assets/google-icon.png';
+import SignUpSuccess from '../sign-up-success/SignUpSuccess';
 
 function SignUpDialog() {
   //Destructuring of the object return by useSignUpDialog custom hooks.
@@ -24,83 +24,82 @@ function SignUpDialog() {
       {isSucces ? (
         <SignUpSuccess />
       ) : (
-        <div className="sign-up-dialog">
-          <div className="sign-up-dialog_title">
+        <div className='sign-up-dialog'>
+          <div className='sign-up-dialog_title'>
             <span>Sign Up</span>
           </div>
 
-          <div className="sign-up-option" onClick={displaySuccessPage}>
-            <div className="logo">
-              <img src={googleIcon} alt="google icon" />
+          <div className='sign-up-option' onClick={displaySuccessPage}>
+            <div className='logo'>
+              <img src={googleIcon} alt='google icon' />
             </div>
-            <div className="text">Sign Up with Google</div>
+            <div className='text'>Sign Up with Google</div>
           </div>
 
-          <div className="choose">
-            <span className="choose_line"></span>
-            <span className="text">Or sign up with email</span>
-            <span className="choose_line"></span>
+          <div className='choose'>
+            <span className='choose_line'></span>
+            <span className='text'>Or sign up with email</span>
+            <span className='choose_line'></span>
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="form-box name-m">
+            <div className='form-box name-m'>
               <label>Name</label>
               <input
-                type="text"
-                className="firstname"
-                name="firstName"
+                type='text'
+                className='firstname'
+                name='firstName'
                 value={formValues.firstName}
                 onChange={handleChange}
-                placeholder="First"
+                placeholder='First'
               />
               <input
-                type="text"
-                className="lastname"
-                name="lastName"
+                type='text'
+                className='lastname'
+                name='lastName'
                 value={formValues.lastName}
                 onChange={handleChange}
-                placeholder="Last"
+                placeholder='Last'
               />
             </div>
-            <div className="form-box email-m">
+            <div className='form-box email-m'>
               <label>Email</label>
               <input
-                className="email"
-                type="text"
-                name="email"
-                placeholder="Your Email"
+                className='email'
+                type='text'
+                name='email'
+                placeholder='Your Email'
                 value={formValues.email}
                 onChange={handleChange}
               />
             </div>
-            <div className="email-error">
-              {emailError && "Valid email is required"}
+            <div className='email-error'>
+              {emailError && 'Valid email is required'}
             </div>
 
-            <div className="form-box pass-m">
+            <div className='form-box pass-m'>
               <label>Password</label>
               <input
-                type="password"
-                className="password"
-                name="password"
-                placeholder="Choose password"
+                type='password'
+                className='password'
+                name='password'
+                placeholder='Choose password'
                 value={formValues.password}
                 onChange={handleChange}
               />
             </div>
-            <div className="strength-meter-margin">
+            <div className='strength-meter-margin'>
               <StrengthMeter formValues={formValues} />
             </div>
 
-            <div className="form-box submit-m">
+            <div className='form-box submit-m'>
               <button
                 className={`submit-btn ${
                   lastName &&
                   firstName &&
                   email &&
-                  /*  formValues.password && */
                   formValues.password.length > 8 &&
-                  "isActive"
+                  'isActive'
                 }`}
               >
                 Sign Up
